@@ -5,7 +5,7 @@ import NotFound from "./pages/NotFound";
 
 function Router() {
   return (
-    <div className="container">
+    <div className="container-fluid p-0">
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,82 +1,20 @@
 import React from "react";
+import QuestionCard from "./QuestionCard";
 
 const CardBody = () => {
   return (
-    <div>
-      <h1>HTML Quiz </h1>
-      <h3>Question 1 of 40:</h3>
-      <p> What does HTML stand for?</p>
-      <div>
-        <div className="form-check bg-gray py-3">
-          <input
-            type="radio"
-            className="form-check-input mx-2"
-            id="radio1"
-            name="optradio"
-            value="option1"
-            checked
-          />
-
-          <label className="form-check-label" for="radio1">
-            Option 1
-          </label>
+    <div className="row m-4" style={{ height: "1000px" }}>
+      <div className=" col-12 col-md-6">
+        <div className="title2">
+          <h1 className="">Web Design Certification Exam </h1>
+          <div className="flex">
+            <h5 className="py-2">Question 1 of 40:</h5>
+            <h6 className="px-2">
+              <span>10</span>:<span>40</span>
+            </h6>
+          </div>
         </div>
-        <div className="form-check bg-gray py-2">
-          <input
-            type="radio"
-            className="form-check-input mx-2"
-            id="radio1"
-            name="optradio"
-            value="option1"
-            checked
-          />
-
-          <label className="form-check-label" for="radio1">
-            Option 1
-          </label>
-        </div>
-        <div className="form-check bg-gray py-2">
-          <input
-            type="radio"
-            className="form-check-input mx-2"
-            id="radio1"
-            name="optradio"
-            value="option1"
-            checked
-          />
-
-          <label className="form-check-label" for="radio1">
-            Option 2
-          </label>
-        </div>
-        <div className="form-check bg-gray py-2">
-          <input
-            type="radio"
-            className="form-check-input mx-2"
-            id="radio1"
-            name="optradio"
-            value="option1"
-            checked
-          />
-
-          <label className="form-check-label" for="radio1">
-            Option 2
-          </label>
-        </div>
-        <div className="form-check bg-gray py-2">
-          <input
-            type="radio"
-            className="form-check-input mx-2"
-            id="radio1"
-            name="optradio"
-            value="option1"
-            checked
-          />
-
-          <label className="form-check-label" for="radio1">
-            Option 4
-          </label>
-        </div>
+        <QuestionCard />
       </div>
     </div>
   );
