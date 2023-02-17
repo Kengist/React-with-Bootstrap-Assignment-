@@ -1,10 +1,13 @@
 import React from "react";
+import CardBody from "../components/CardBody";
 
 const Home = () => {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row">
-        <div className="col-12">How are you</div>
+        <div className="col-12">
+          <CardBody />
+        </div>
       </div>
     </div>
   );
