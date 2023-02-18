@@ -20,34 +20,18 @@ const WelcomeMessage = () => {
             </div>
             <div className="my-2 d-flex align-items-center">
               <h6 className="">Time to complete:</h6>
-              <p className="pt-2 px-2">Around 50 Minutess</p>
+              <p className="pt-2 px-2">Around 50 Minutes</p>
             </div>
             <div className="my-2 d-flex align-items-center">
-              <h6 className="">Certifications Type:</h6>
+              <h6 className="">Certification Type:</h6>
               <p className="pt-2 px-2">Self-paced</p>
             </div>
           </div>
-          <h4>Exam Instruction </h4>
-          <hr className="w-50" />
-          <div className=" border-star p-">
-            <div className="my-2 d-flex align-items-center">
-              <h6 className="">Enrollment fee:</h6>
-              <p className="pt-2 px-2">$140 (one time purchase)</p>
-            </div>
-            <div className="my-2 d-flex align-items-center">
-              <h6 className="">Time to complete:</h6>
-              <p className="pt-2 px-2">Around 80 Minutess</p>
-            </div>
-            <div className="my-2 d-flex align-items-center">
-              <h6 className="">certifications Type:</h6>
-              <p className="pt-2 px-2">Self-paced</p>
-            </div>
-          </div>
+
           <div className="mt-2">
             <Link to="/home" className="btn btn-primary">
               Get Started
             </Link>
-            <Link to="/result">Result</Link>
           </div>
         </div>
       </div>

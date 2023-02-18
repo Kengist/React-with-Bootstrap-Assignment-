@@ -24,7 +24,7 @@ const CountDown = ({ seconds, timeElapsed }) => {
       clearInterval(timerId.current);
       timeElapsed();
     }
-  }, [countDownTimer]);
+  }, [countDownTimer, timeElapsed]);
 
   return <strong>{formatTime(countDownTimer)}</strong>;
 };

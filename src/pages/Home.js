@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { HTML_QUESTIONS } from "../utils";
 import QuestionCard from "../components/QuestionCard";
 import CountDown from "../components/CountDown";
-import { async } from "q";
+import SuccessCard from "../components/SuccessCard";
+import ErrorCard from "../components/ErrorCard";
 
 const Home = () => {
   const [answered, setAnswered] = useState(0);
@@ -30,6 +31,7 @@ const Home = () => {
   }, []);
 
   const handleSubmit = async () => {
+    setIsSubmitted(true);
     setLoading(true);
     try {
       const res = await fetch(
@@ -56,28 +58,26 @@ const Home = () => {
     <div className="container-fluid">
       {!loading && isSubmitted ? (
         <div>
-          <h4>Hi, Nini</h4>
-          <h3>Thank you for writing this certification Exam.</h3>
           {(correctQtnCount / HTML_QUESTIONS.length) * 100 > 70 ? (
             <div>
-              <h2 className="text-success">Congratulations!!!</h2>
-              <div>
-                You Got:{" "}
-                {Math.trunc((correctQtnCount / HTML_QUESTIONS.length) * 100)}%
-                in you exam which is above our 70% passing mark. We will sent
-                our certificate to you email within the next two working day.
-                within 48hrs
-              </div>
+              <SuccessCard
+                totalQtnCount={HTML_QUESTIONS.length}
+                correctQtnCount={correctQtnCount}
+              />
             </div>
           ) : (
             <div>
-              <h2 className="text-danger">Sorry!</h2>
+              <ErrorCard
+                totalQtnCount={HTML_QUESTIONS.length}
+                correctQtnCount={correctQtnCount}
+              />
+              {/* <h2 className="text-danger">Sorry!</h2>
               <div>
                 You Got:{" "}
                 {Math.trunc((correctQtnCount / HTML_QUESTIONS.length) * 100)}%
                 which is below our 70% passing mark. Please practise more and
                 try again in a week time
-              </div>
+              </div> */}
             </div>
           )}
         </div>
@@ -99,7 +99,7 @@ const Home = () => {
                     <h6 className="px-2">
                       <div>
                         <CountDown
-                          seconds={60 * 50}
+                          seconds={60 * 51}
                           timeElapsed={() => handleSubmit()}
                         />
                       </div>

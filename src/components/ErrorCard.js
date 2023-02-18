@@ -1,43 +1,47 @@
 import React from "react";
 import { RiErrorWarningLine } from "react-icons/ri";
 
-const ErrorCard = () => {
+const ErrorCard = ({ totalQtnCount, correctQtnCount }) => {
   return (
-    <div>
-      <div className="congrats">
-        <h3 className="text-danger">
-          Opps<span className="hide"></span>! Nini
-        </h3>
+    <div className="container-center">
+      <div className="congrats py-4">
+        <h2 className="text-danger">
+          Sorry, <span className="hide"></span>!
+          <span className="text-dark"> Babalola, Ninioluwa Joel</span>
+        </h2>
 
-        <div className=" ">
-          {/* {status === "pass" ? (
-            <IoMdCheckmarkCircleOutline size={60} />
-          ) : ( */}
-          <>
-            <RiErrorWarningLine size={60} color={"red"} />
-            <p className="try-again">Try Again in a week time</p>
-          </>
-          {/* )} */}
+        <div className=" my-2">
+          <RiErrorWarningLine size={60} color={"red"} />
         </div>
         <div className="text">
-          <p>You have successfully Complete Examination with us.</p>
           <p>
-            <span className="py-2"> Here are your result details </span>
+            You Got: {Math.trunc((correctQtnCount / totalQtnCount) * 100)}% in
+            your exam which is below our 70% pass mark. You have not
+            successfully completed this Examination with us. Kindly practice
+            more and retake this examination in 2 weeks time.
           </p>
           <p>
-            <span className="py-4">Date: 18.102.2023</span>
-            <br />
-            Time: 11am
+            <span className="py-2">
+              {" "}
+              <strong>Result details</strong>{" "}
+            </span>
           </p>
+
           <p>
-            <span className="text-success">Correct Answers:</span> 70%
+            <span className="text-success">Correct Answers:</span>{" "}
+            {correctQtnCount}
           </p>
           <p>
             <span className="text-danger">
-              Wrong Answers: <span className="text-dark">30%</span>
+              Wrong Answers:{" "}
+              <span className="text-dark">
+                {" "}
+                {totalQtnCount - correctQtnCount}
+              </span>
             </span>
             <br />
           </p>
+          <hr />
         </div>
         <p className="regards">Regards, W3schools</p>
       </div>
