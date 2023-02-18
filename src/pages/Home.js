@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Card from "../components/card/Card";
 import { HTML_QUESTIONS } from "../utils";
+import CardBody from "../components/CardBody";
+import QuestionCard from "../components/QuestionCard";
 
 const Home = () => {
   const [answered, setAnswered] = useState(0);
@@ -16,7 +17,7 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       {isSubmitted ? (
         <div>
           <h4>Hi, Nini</h4>
@@ -45,34 +46,53 @@ const Home = () => {
           )}
         </div>
       ) : (
-        <>
-          <div className="row">
-            <div className="col-12 col-md-6">
-              {answered}/{HTML_QUESTIONS.length}
+        // <>
+        //   <div className="row">
+        //     <div className="col-12 col-md-6">
+        //       {answered}/{HTML_QUESTIONS.length}
+        //     </div>
+        //   </div>
+        //   <div className="row">
+        //     <div className="col-12 col-md-6">
+        //       {HTML_QUESTIONS.map((data) => (
+        //         <Card
+        //           key={data.id}
+        //           data={data}
+        //           setAnswered={() => setAnswered(answered + 1)}
+        //           setCorrectQtnCount={(value) =>
+        //             setCorrectQtnCount(correctQtnCount + value)
+        //           }
+        //         />
+        //       ))}
+        //     </div>
+        //   </div>
+        //   <div className="row mb-5">
+        //     <div className="col-12 mx-3">
+        //       <button onClick={handleSubmit} className="btn btn-warning">
+        //         Submit
+        //       </button>
+        //     </div>
+        //   </div>
+        // </>
+
+        <div className="row">
+          <div className="col-12 col-md-12">
+            <div className="row m-4" style={{ height: "1000px" }}>
+              <div className=" col-12 col-md-6">
+                <div className="title2">
+                  <h1 className="">Web Design Certification Exam </h1>
+                  <div className="flex">
+                    <h5 className="py-2">Question 1 of 40:</h5>
+                    <h6 className="px-2">
+                      <span>10</span>:<span>40</span>
+                    </h6>
+                  </div>
+                </div>
+                <QuestionCard />
+              </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-12 col-md-6">
-              {HTML_QUESTIONS.map((data) => (
-                <Card
-                  key={data.id}
-                  data={data}
-                  setAnswered={() => setAnswered(answered + 1)}
-                  setCorrectQtnCount={(value) =>
-                    setCorrectQtnCount(correctQtnCount + value)
-                  }
-                />
-              ))}
-            </div>
-          </div>
-          <div className="row mb-5">
-            <div className="col-12 mx-3">
-              <button onClick={handleSubmit} className="btn btn-warning">
-                Submit
-              </button>
-            </div>
-          </div>
-        </>
+        </div>
       )}
     </div>
   );
