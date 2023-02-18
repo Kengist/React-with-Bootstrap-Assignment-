@@ -30,7 +30,7 @@ export const HTML_QUESTIONS = [
   {
     id: 4,
     question: `4.	Which tag is used to define a heading in HTML?`,
-    options: [" <a> ", "<h1> ", "<p> ", "<img> "],
+    options: [" <a> ", "<h3> ", "<p> ", "<img> "],
     answer: 1,
   },
   {
@@ -78,7 +78,7 @@ export const HTML_QUESTIONS = [
   {
     id: 12,
     question: `12.	Which tag is used to define a table row in HTML?`,
-    options: [" <tr> ", "<td> ", "<th>", "<table-row> "],
+    options: ["<tr> ", "<td> ", "<t-row>", "<table-row> "],
     answer: 0,
   },
   {
@@ -108,7 +108,7 @@ export const HTML_QUESTIONS = [
   {
     id: 17,
     question: `17.	Which input type is used to create a checkbox in HTML?`,
-    options: ["box", "check", "checkbox", "radio"],
+    options: ["check-box", "check", "checkbox", "radio"],
     answer: 2,
   },
   {
@@ -125,7 +125,7 @@ export const HTML_QUESTIONS = [
   },
   {
     id: 20,
-    question: `20.	Which tag is used to create a dropdown list in HTML?`,
+    question: `20.	Which tag is used to create a input dropdown list in HTML?`,
     options: ["<drop>", "<input>", "<label> ", "<select>"],
     answer: 3,
   },
@@ -523,143 +523,123 @@ export const HTML_QUESTIONS = [
   },
   {
     id: 72,
-    question: `72.	Which class is used to create a jumbotron in Bootstrap? `,
-    options: [
-      ".jumbotron ",
-      ".jumbotron-header ",
-      ".jumbotron-body",
-      ".jumbotron-fluid",
-    ],
-    answer: 0,
+    question: `72.	const result = typeof '1'  \n 
+    what will be the answer of the code above 
+    `,
+    options: ["1", "undefined", "string", "number"],
+    answer: 2,
   },
   {
     id: 73,
-    question: `73.	Which class is used to create a progress bar in Bootstrap?  `,
-    options: [
-      ".progress  ",
-      ".progress-bar",
-      ".progress-value",
-      ".progress-fill ",
-    ],
+    question: `72.	const result = 1 + '1'  \n 
+    what will be the answer of the code above 
+    `,
+    options: ["1", "11", "2", "undefined"],
     answer: 1,
   },
   {
     id: 74,
-    question: `	74.	Which class is used to create a dropdown menu in Bootstrap?   `,
-    options: [
-      ".dropdown ",
-      ".dropdown-item",
-      ".dropdown-menu",
-      ".dropdown-toggle",
-    ],
-    answer: 2,
+    question: `74.	Which text color will be displayed in the code below \n 
+    <div class='box' id='box'>Hello</div> \n 
+    #box{ color:green} \n 
+    .box{ color:red}
+    `,
+    options: ["green", "red", "None of the above", "All of the above"],
+    answer: 0,
   },
   {
     id: 75,
-    question: `	75.	Which class is used to create a badge in Bootstrap?`,
-    options: [".badge", ".badge-item", ".badge-text", ".badge-label"],
-    answer: 0,
-  },
-  {
-    id: 76,
-    question: `	76.	Which class is used to create a tooltip in Bootstrap?`,
+    question: `75.	margin-inlie will add margin to the:`,
     options: [
-      ".tooltip",
-      ".tooltip-text",
-      ".tooltip-label ",
-      ".tooltip-title ",
+      "left side",
+      "top side",
+      "left and right side",
+      "top and bottom side",
     ],
-    answer: 0,
-  },
-  {
-    id: 77,
-    question: `	77.	Which class is used to create a popover in Bootstrap?`,
-    options: [
-      ".popover ",
-      ".popover-body",
-      ".popover-header  ",
-      ".popover-title  ",
-    ],
-    answer: 0,
-  },
-  {
-    id: 78,
-    question: `	78.	Which class is used to create a list group in Bootstrap?`,
-    options: [".list-group", ".list-item ", ".list-group-item", ".list-text"],
     answer: 2,
   },
   {
-    id: 79,
-    question: `	79.	Which class is used to create a pill navigation in Bootstrap?`,
-    options: [".pill-nav", ".nav-pills ", ".nav-item-pills", ".nav-link-pills"],
-    answer: 1,
-  },
-  {
-    id: 80,
-    question: `	80.	Which class is used to create a collapse component in Bootstrap? `,
+    id: 76,
+    question: `75.	margin-block will add margin to the:`,
     options: [
-      ".collapse ",
-      ".collapse-content ",
-      ".collapse-header",
-      ".collapse-body",
-    ],
-    answer: 0,
-  },
-  {
-    id: 81,
-    question: `	81.	Which class is used to create a breadcrumb navigation in Bootstrap? `,
-    options: [
-      ".breadcrumb  ",
-      ".breadcrumb-nav ",
-      ".breadcrumb-item ",
-      ".breadcrumb-link ",
-    ],
-    answer: 0,
-  },
-  {
-    id: 82,
-    question: `	82.	Which class is used to create a media object in Bootstrap?`,
-    options: [".media ", ".media-object ", ".media-body ", ".media-content "],
-    answer: 0,
-  },
-  {
-    id: 83,
-    question: `	83.	Which class is used to create a list of horizontal links in Bootstrap? `,
-    options: [
-      ".list-horizontal ",
-      ".horizontal-links  ",
-      ".nav-horizontal ",
-      ".nav-tabs",
+      "left side",
+      "top side",
+      "left and right side",
+      "top and bottom side",
     ],
     answer: 3,
   },
   {
-    id: 84,
-    question: `	84.	Which class is used to create a responsive embed in Bootstrap?  `,
-    options: [
-      ".embed-responsive ",
-      ".responsive-embed  ",
-      ".video-responsive ",
-      ".responsive-video",
-    ],
-    answer: 0,
+    id: 77,
+    question: `	77.	Bootstrap Grid is divided into how many columns`,
+    options: ["1", "4", "6", "12"],
+    answer: 3,
   },
   {
-    id: 85,
-    question: `	85.	Which class is used to create a spinner in Bootstrap? `,
-    options: [
-      ".spinner",
-      ".spinner-item ",
-      ".spinner-grow ",
-      ".spinner-circle ",
-    ],
+    id: 78,
+    question: `	78.	Which of this is not a button type?`,
+    options: ["Submit ", "button", "text", "reset"],
     answer: 2,
   },
   {
-    id: 86,
-    question: `	86.	Which class is used to create a toast message in Bootstrap? `,
-    options: [".toast", ".toast-header ", ".toast-body ", ".toast-message "],
+    id: 79,
+    question: `	79.	Which on is not an input type?`,
+    options: ["color", "month", "size", "text"],
+    answer: 1,
+  },
+  {
+    id: 80,
+    question: `	80.	Is h1, h2, h3, h4, h5,h6  classes in Bootstrap `,
+    options: ["Yes", "No", "Not Sure"],
     answer: 0,
+  },
+  {
+    id: 81,
+    question: `	81.	Which of these is a class in Bootstrap `,
+    options: ["div", "table", "span", "img"],
+    answer: 1,
+  },
+  {
+    id: 82,
+    question: `	82.	Which is not a class in Bootstrap`,
+    options: ["btn", "m-2", "y-3", "f-4"],
+    answer: 3,
+  },
+  {
+    id: 83,
+    question: `	83.	What will the border color of the code below output \n 
+    {
+      background-color:green;
+      color:red;
+      border:solid 1px;
+    }
+    `,
+    options: ["None", "White", "Green", "Red"],
+    answer: 3,
+  },
+  {
+    id: 84,
+    question: `	86.	what will this color code output: \n 
+    {color:rgba(0,0,255,1)}
+    `,
+    options: ["Red", "Green ", "Blue ", "Black", "white"],
+    answer: 2,
+  },
+  {
+    id: 85,
+    question: `	86.	what will this color code output: \n 
+    {color:rgba(255,255,255,1)}
+    `,
+    options: ["Red", "Green ", "Blue ", "Black", "white"],
+    answer: 4,
+  },
+  {
+    id: 86,
+    question: `	86.	what will this color code output: \n 
+    {color:#00FF00}
+    `,
+    options: ["Red", "Green ", "Blue ", "Black", "white"],
+    answer: 1,
   },
   {
     id: 87,
