@@ -430,7 +430,7 @@ export const HTML_QUESTIONS = [
   {
     id: 59,
     question: `	59.	Which property is used to set the maximum width of an element in CSS?`,
-    options: ["max-width", "width", "min-width", "max-width"],
+    options: ["max-width", "width", "min-width", "100%"],
     answer: 0,
   },
   {
@@ -602,7 +602,7 @@ export const HTML_QUESTIONS = [
   {
     id: 82,
     question: `	82.	Which is not a class in Bootstrap`,
-    options: ["btn", "m-2", "y-3", "f-4"],
+    options: ["btn", "p-2", "py-3", "ps-4"],
     answer: 3,
   },
   {
@@ -654,12 +654,12 @@ export const HTML_QUESTIONS = [
   },
   {
     id: 88,
-    question: `	88. Which class is used to create a responsive grid that adjusts based on the size of the viewport? `,
+    question: `	88. what is the full mean of UI/UX `,
     options: [
-      ".grid-responsive",
-      ".responsive-grid ",
-      ".grid-fluid ",
-      ".grid-container",
+      "User Interaction/User Section",
+      "User Interface/User Experience",
+      "Useful Interaction/User Examination",
+      "Unit Integration/Unit-X",
     ],
     answer: 1,
   },
