@@ -1,23 +1,60 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HTML_QUESTIONS } from "../utils";
 import QuestionCard from "../components/QuestionCard";
+import CountDown from "../components/CountDown";
+import { async } from "q";
 
 const Home = () => {
   const [answered, setAnswered] = useState(0);
   const [correctQtnCount, setCorrectQtnCount] = useState(0);
-  const [isSubmitted, setIsSubmitted] = useState(
-    JSON.parse(localStorage.getItem("w3sch")) || false
-  );
+  const [isSubmitted, setIsSubmitted] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  const handleSubmit = () => {
-    // localStorage.setItem("w3sch", JSON.stringify(true));
-    setIsSubmitted(true);
-    console.log("You got :", correctQtnCount);
+  const checkIsCompleted = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(
+        "https://progfams.com/w3sch/backend/api/check-status"
+      );
+      const { status, data } = await res.json();
+      if (status) setIsSubmitted(Number(data.isSubmitted) === 1 ? true : false);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    checkIsCompleted();
+  }, []);
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(
+        "https://progfams.com/w3sch/backend/api/update-status",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ status: 0 }),
+        }
+      );
+
+      const result = res.json();
+      console.log("result:::", result);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
   };
 
   return (
     <div className="container-fluid">
-      {isSubmitted ? (
+      {!loading && isSubmitted ? (
         <div>
           <h4>Hi, Nini</h4>
           <h3>Thank you for writing this certification Exam.</h3>
@@ -45,6 +82,10 @@ const Home = () => {
           )}
         </div>
       ) : (
+        ""
+      )}
+
+      {!isSubmitted && (
         <div className="row">
           <div className="col-12 col-md-12">
             <div className="row m-4">
@@ -56,13 +97,18 @@ const Home = () => {
                       Question {answered} of {HTML_QUESTIONS.length}:
                     </h5>
                     <h6 className="px-2">
-                      <span>10</span>:<span>40</span>
+                      <div>
+                        <CountDown
+                          seconds={60 * 50}
+                          timeElapsed={() => handleSubmit()}
+                        />
+                      </div>
                     </h6>
                   </div>
                 </div>
                 {HTML_QUESTIONS.map((data) => (
                   <QuestionCard
-                    key={data.id}
+                    key={data.id.toString()}
                     data={data}
                     setAnswered={() => setAnswered(answered + 1)}
                     setCorrectQtnCount={(value) =>

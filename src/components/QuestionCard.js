@@ -6,7 +6,7 @@ const QuestionCard = ({ data, setAnswered, setCorrectQtnCount }) => {
 
   return (
     <div className="mb-5">
-      <p className="question"> {newlineText(question)}</p>
+      <div className="question"> {newlineText(question)}</div>
       <QuestionOptions
         setAnswered={setAnswered}
         setCorrectQtnCount={(value) => setCorrectQtnCount(value)}
@@ -52,18 +52,22 @@ const QuestionOptions = ({
     setIsVisited(true);
   };
   return options.map((option, optionId) => (
-    <div className="mt-3" key={optionId}>
+    <div className="mt-3" key={optionId.toString()}>
       <div className="form-check bg-gray py-2 mb-1">
         <input
-          onClick={() => handleCheck(optionId)}
+          onChange={() => handleCheck(optionId)}
           type="checkbox"
-          className="form-check-input mx-2 cursor-pointer"
+          className="form-check-input mx-1 cursor-pointer"
           id="radio1"
           name="optradio"
           value="option1"
           checked={selected === optionId}
         />
-        <label className="form-check-label" for="radio1">
+        <label
+          style={{ marginLeft: "10px" }}
+          className="form-check-label"
+          htmlFor="checkbox"
+        >
           {option}
         </label>
       </div>

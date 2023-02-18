@@ -1,5 +1,5 @@
 export function newlineText(str) {
-  const newText = str.split("\n").map((str) => <p>{str}</p>);
+  const newText = str.split("\n").map((str, i) => <p key={i}>{str}</p>);
   return newText;
 }
 
@@ -138,7 +138,7 @@ export const HTML_QUESTIONS = [
   {
     id: 22,
     question: `	27.	Which tag is used to add an iframe in HTML? `,
-    options: ["<frame> ", "<embed>  ", "<object> ", "<iframe> "],
+    options: ["<frame> ", "<embed>  ", "<i-frame> ", "<iframe> "],
     answer: 3,
   },
   {
@@ -156,7 +156,7 @@ export const HTML_QUESTIONS = [
     id: 24,
     question: `24.	Which of this is not a framework?  `,
     options: ["React ", "Bootstrap", "Angular", "CSS"],
-    answer: 0,
+    answer: 3,
   },
   {
     id: 25,
@@ -193,7 +193,7 @@ export const HTML_QUESTIONS = [
     answer: 2,
   },
   {
-    id: 28,
+    id: 29,
     question: `28.	Which symbol is used for multi line comment in Javascript? `,
     options: [
       "<comment>comment</comment>",
