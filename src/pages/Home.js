@@ -18,7 +18,12 @@ const Home = () => {
         "https://progfams.com/w3sch/backend/api/check-status"
       );
       const { status, data } = await res.json();
-      if (status) setIsSubmitted(Number(data.isSubmitted) === 1 ? true : false);
+      if (status) {
+        setIsSubmitted(Number(data.isSubmitted) === 1 ? true : false);
+        if (data.isSubmitted) {
+          setCorrectQtnCount(data.correctCount);
+        }
+      }
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -41,12 +46,13 @@ const Home = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ status: 1 }),
+          body: JSON.stringify({
+            status: 1,
+            correctCount: correctQtnCount,
+          }),
         }
       );
 
-      const result = res.json();
-      console.log("result:::", result);
       setLoading(false);
     } catch (error) {
       setLoading(false);
