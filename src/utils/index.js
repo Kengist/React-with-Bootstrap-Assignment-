@@ -1,7 +1,7 @@
 export const HTML_QUESTIONS = [
   {
     id: 1,
-    question: `What does HTML stand for? `,
+    question: `1. What does HTML stand for? `,
     options: [
       "Hyper Text Makeup Language",
       "Home Tool Markup Language",
