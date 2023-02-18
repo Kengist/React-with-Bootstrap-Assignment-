@@ -41,7 +41,7 @@ const Home = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ status: 0 }),
+          body: JSON.stringify({ status: 1 }),
         }
       );
 
