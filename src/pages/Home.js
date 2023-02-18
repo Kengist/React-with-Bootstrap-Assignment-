@@ -39,7 +39,7 @@ const Home = () => {
                 You Got:{" "}
                 {Math.trunc((correctQtnCount / HTML_QUESTIONS.length) * 100)}%
                 which is below our 70% passing mark. Please practise more and
-                try again in one week time
+                try again in a week time
               </div>
             </div>
           )}

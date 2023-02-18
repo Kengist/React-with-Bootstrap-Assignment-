@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { newlineText } from "../utils";
 
 const QuestionCard = ({ data, setAnswered, setCorrectQtnCount }) => {
   const { id: qstnNo, question, options, answer } = data;
 
   return (
     <div className="mb-5">
-      <p className="question"> {question}</p>
+      <p className="question"> {newlineText(question)}</p>
       <QuestionOptions
         setAnswered={setAnswered}
         setCorrectQtnCount={(value) => setCorrectQtnCount(value)}

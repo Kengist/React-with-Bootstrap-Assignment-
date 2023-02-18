@@ -1,3 +1,8 @@
+export function newlineText(str) {
+  const newText = str.split("\n").map((str) => <p>{str}</p>);
+  return newText;
+}
+
 export const HTML_QUESTIONS = [
   {
     id: 1,
@@ -13,13 +18,13 @@ export const HTML_QUESTIONS = [
   {
     id: 2,
     question: `2.	Which tag is used to create a hyperlink in HTML? `,
-    options: [" <a> ", "<h1> ", "<p> ", "<img>"],
+    options: ["<a>", "<link> ", "<src> ", "<img>"],
     answer: 0,
   },
   {
     id: 3,
     question: `3.	Which tag is used to define a paragraph in HTML? `,
-    options: ["<a> ", "<h1> ", "<p> ", "<img> "],
+    options: ["<para> ", "<paragraph> ", "<p> ", "<img> "],
     answer: 2,
   },
   {
@@ -37,18 +42,18 @@ export const HTML_QUESTIONS = [
   {
     id: 6,
     question: `6.	Which tag is used to create a line break in HTML?`,
-    options: [" <br> ", "<hr>", "<p>", "<img>"],
+    options: [" <br> ", "<break>", "<p>", "<b>"],
     answer: 0,
   },
   {
     id: 7,
     question: `7.	Which attribute is used to specify the alternate text for an image in HTML?`,
-    options: [" alt ", "src", "href", "title"],
-    answer: 0,
+    options: ["alternate", "src", "img", "alt"],
+    answer: 3,
   },
   {
     id: 8,
-    question: `8.	Which tag is used to define a list in HTML?`,
+    question: `8.	Which tag is used to define ordered list in HTML?`,
     options: [" <li> ", "<ol>", "<ul>", "<dl>"],
     answer: 1,
   },
@@ -67,127 +72,147 @@ export const HTML_QUESTIONS = [
   {
     id: 11,
     question: `11.	Which attribute is used to set the width of a table in HTML?`,
-    options: [" width ", "height", "size", "style "],
+    options: ["width", "height", "size", "style "],
     answer: 0,
   },
   {
     id: 12,
     question: `12.	Which tag is used to define a table row in HTML?`,
-    options: [" <tr> ", "<td> ", "<th>", "<table> "],
+    options: [" <tr> ", "<td> ", "<th>", "<table-row> "],
     answer: 0,
   },
   {
     id: 13,
     question: `	13.	Which tag is used to define a table cell in HTML? `,
-    options: [" <tr> ", "<td> ", "<th>", "<table> "],
+    options: [" <tr> ", "<td> ", "<th>", "<table-cell> "],
     answer: 1,
   },
   {
     id: 14,
     question: `	14.	Which tag is used to define a table header cell in HTML?  `,
-    options: ["<tr> ", "<td> ", "<th>", "<table> "],
+    options: ["<tr> ", "<td> ", "<th>", "<table-header> "],
     answer: 2,
   },
   {
     id: 15,
     question: `	15.	Which tag is used to create a form in HTML? `,
-    options: ["<form> ", "<input> ", "<label>", "<select>  "],
-    answer: 0,
+    options: ["<input> ", "<label>", "<form> ", "<select>  "],
+    answer: 2,
   },
   {
     id: 16,
     question: `	16.	Which attribute is used to specify the type of an input field in HTML?`,
-    options: ["type ", "value ", "name", "action "],
+    options: ["type ", "text", "name", "input"],
     answer: 0,
   },
   {
     id: 17,
     question: `17.	Which input type is used to create a checkbox in HTML?`,
-    options: ["text ", "password", "checkbox", "radio"],
-    answer: 0,
+    options: ["box", "check", "checkbox", "radio"],
+    answer: 2,
   },
   {
     id: 18,
     question: `	18.	Which input type is used to create a radio button in HTML?`,
-    options: ["text ", "password", "checkbox", "radio"],
+    options: ["text", "password", "input-radio", "radio"],
     answer: 3,
   },
   {
     id: 19,
     question: `	19.	Which input type is used to create a password field in HTML?`,
-    options: ["text ", "password", "checkbox", "radio"],
+    options: ["pwd ", "password", "type", "radio"],
     answer: 1,
   },
   {
     id: 20,
     question: `20.	Which tag is used to create a dropdown list in HTML?`,
-    options: [" <form> ", "<input>", "<label> ", "<select>"],
+    options: ["<drop>", "<input>", "<label> ", "<select>"],
     answer: 3,
   },
   {
     id: 21,
     question: `	21.	Which attribute is used to specify the value of an input field in HTML?`,
-    options: ["type ", "value", "name", "action"],
+    options: ["type", "value", "text-value", "action"],
     answer: 1,
   },
   {
     id: 22,
-    question: `	22.	Which attribute is used to specify the action to be performed on form submission in HTML? `,
-    options: ["type ", "value", "name", "action"],
+    question: `	27.	Which tag is used to add an iframe in HTML? `,
+    options: ["<frame> ", "<embed>  ", "<object> ", "<iframe> "],
     answer: 3,
   },
   {
     id: 23,
     question: `	23.	Which tag is used to add a comment in HTML? `,
     options: [
-      "<!-- comment --> ",
       "<comment>comment</comment>",
-      "<p>comment</p> ",
-      "<span>comment</span> ",
+      "<!-- comment --> ",
+      "//<p>comment</p> ",
+      "/*<span>comment</span>*/",
     ],
-    answer: 0,
+    answer: 1,
   },
   {
     id: 24,
-    question: `24.	Which tag is used to create a horizontal rule in HTML?  `,
-    options: ["<hr> ", "<br>", "<dr> ", "<p> "],
+    question: `24.	Which of this is not a framework?  `,
+    options: ["React ", "Bootstrap", "Angular", "CSS"],
     answer: 0,
   },
   {
     id: 25,
-    question: `25.	Which tag is used to add a video in HTML?  `,
-    options: ["<video> ", "<audio>", "<img> ", "<object> "],
-    answer: 0,
+    question: `25.	Which of these is not a semantic element?  `,
+    options: ["<form>", "<table>", "<div> ", "<article> "],
+    answer: 2,
   },
   {
     id: 26,
-    question: `	26.	Which tag is used to add audio in HTML?  `,
-    options: ["<video> ", "<audio>", "<img> ", "<object> "],
+    question: `	26.	An iframe tag is use to?  `,
+    options: [
+      "Add border to a content",
+      "Display a web page within a web",
+      "None of the above",
+      "All of the above",
+    ],
     answer: 1,
   },
   {
     id: 27,
-    question: `	27.	Which tag is used to add an iframe in HTML? `,
-    options: ["<iframe> ", "<frame> ", "<embed>  ", "<object> "],
-    answer: 0,
+    question: `	22.	Which attribute is used to specify the action to be performed on form submission in HTML? `,
+    options: ["type ", "value", "name", "action"],
+    answer: 3,
   },
   {
     id: 28,
-    question: `28.	Which attribute is used to specify the source of an image or media in HTML? `,
-    options: ["alt ", "src ", "href", " title "],
-    answer: 1,
+    question: `28.	Which symbol is used for single line comment in Javascript? `,
+    options: [
+      "<comment>comment</comment>",
+      "<!-- comment --> ",
+      "//<p>comment</p> ",
+      "/*<span>comment</span>*/",
+    ],
+    answer: 2,
   },
   {
-    id: 29,
-    question: `	29.	Which tag is used to create a link to an external CSS file in HTML? `,
-    options: ["<style> ", "<link>", "<script> ", " <meta>"],
-    answer: 1,
+    id: 28,
+    question: `28.	Which symbol is used for multi line comment in Javascript? `,
+    options: [
+      "<comment>comment</comment>",
+      "<!-- comment --> ",
+      "//<p>comment</p> ",
+      "/*<span>comment</span>*/",
+    ],
+    answer: 3,
   },
   {
     id: 30,
-    question: `	31.	Which tag is used to create a meta description in HTML? `,
-    options: ["<style> ", "<link>", "<script> ", " <meta>"],
-    answer: 3,
+    question: `	31.	What is the full meaning of CDN `,
+    options: [
+      "Content device network ",
+      "Content Delivery framework",
+      "Content Delivery network",
+      "None of the above",
+    ],
+    answer: 2,
   },
   {
     id: 31,
@@ -204,30 +229,35 @@ export const HTML_QUESTIONS = [
     id: 32,
     question: `	33.	What is the correct CSS syntax for setting the font family of an element?  `,
     options: [
+      "font:family: Arial, sans-serif; ",
       "font-family: Arial, sans-serif;",
-      "font: Arial, sans-serif; ",
       "family-font: Arial, sans-serif; ",
-      "font_type: Arial, sans-serif; ",
+      "font-type: Arial, sans-serif; ",
     ],
-    answer: 0,
+    answer: 1,
   },
   {
     id: 33,
     question: `	33.	Which property is used to change the background color of an element in CSS?  `,
-    options: ["color", "background-color", "bg-color ", " bg"],
+    options: ["color", "background-color", "bg-color ", "bg"],
     answer: 1,
   },
   {
     id: 34,
-    question: `34.	Which property is used to set the height of an element in CSS?  `,
-    options: ["height", " width ", "size ", " length "],
-    answer: 0,
+    question: `34.	What is === operator ?`,
+    options: ["Assignment", "Logical ", "Comparison", " Nome of the above "],
+    answer: 2,
   },
   {
     id: 35,
-    question: `35.	Which property is used to set the width of an element in CSS?  `,
-    options: ["height", "width ", "size ", " length "],
-    answer: 1,
+    question: `35.	What is an undefined value in JavaScript? `,
+    options: [
+      "Variable used in the code doesn’t exist",
+      "Variable is not assigned to any value",
+      "All of the above",
+      "None of the above",
+    ],
+    answer: 2,
   },
   {
     id: 36,
@@ -244,7 +274,7 @@ export const HTML_QUESTIONS = [
   {
     id: 38,
     question: `	38.	Which property is used to make the text bold in CSS? `,
-    options: ["font-weight", "bold ", " font-style ", "text-transform"],
+    options: ["font-weight", "bold ", " font-style ", "text-bold"],
     answer: 0,
   },
   {
@@ -256,7 +286,12 @@ export const HTML_QUESTIONS = [
   {
     id: 40,
     question: `	40.	Which property is used to add an underline to text in CSS? `,
-    options: ["underline", "text-decoration", "decoration", "line"],
+    options: [
+      "underline",
+      "text-decoration",
+      "decoration",
+      "None of the above",
+    ],
     answer: 1,
   },
   {
@@ -273,14 +308,14 @@ export const HTML_QUESTIONS = [
   },
   {
     id: 43,
-    question: `43.	Which property is used to add margin to an element in CSS?`,
-    options: ["padding ", "margin", "spacing", "border"],
-    answer: 1,
+    question: `43.	What is the data type of: const result = 1 > 2`,
+    options: ["String ", "Number", "Object", "Boolean"],
+    answer: 3,
   },
   {
     id: 44,
     question: `	44.	Which property is used to set the position of an element in CSS?`,
-    options: ["position ", "place", "location", "offset"],
+    options: ["position", "padding", "margin", "height"],
     answer: 0,
   },
   {
@@ -292,8 +327,8 @@ export const HTML_QUESTIONS = [
   {
     id: 46,
     question: `	46.	Which property is used to set the opacity of an element in CSS?`,
-    options: ["opacity", "transparency ", "filter", "visibility"],
-    answer: 0,
+    options: ["transparency ", "filter", "opacity", "visibility"],
+    answer: 2,
   },
   {
     id: 47,
@@ -303,26 +338,31 @@ export const HTML_QUESTIONS = [
   },
   {
     id: 48,
-    question: `	48.	Which property is used to make an element float in CSS?`,
-    options: ["float", "position", "clear", "display"],
-    answer: 0,
+    question: `	48.	const cloths = ["Shirt", "Pant", "TShirt"];
+     \n cloths.pop();
+     what will cloths output?
+     `,
+    options: [
+      '["Shirt", "Pant", "TShirt"]',
+      '["Shirt", "Pant"]',
+      '["Pant", "TShirt"]',
+      '"Shirt", "Pant"',
+    ],
+    answer: 1,
   },
   {
     id: 49,
-    question: `	49.	Which property is used to set the text alignment in the vertical axis in CSS?`,
-    options: ["vertical-align", "align", "text-align ", "line-height"],
+    question: `	49.	Is JavaScript case-sensitive`,
+    options: ["Yes", "No", "None of the above", "All of the above"],
     answer: 0,
   },
   {
     id: 50,
-    question: `50.	Which property is used to display an element as a block-level element in CSS? `,
-    options: [
-      "display:block;",
-      "display: inline;",
-      "display: none;",
-      "display: flex;",
-    ],
-    answer: 0,
+    question: `50.	what will the code below output \n 
+    const result = 2 > 1 ? 10 : 20
+    `,
+    options: ["20", "10", "2", "1"],
+    answer: 1,
   },
   {
     id: 51,
@@ -360,8 +400,8 @@ export const HTML_QUESTIONS = [
   {
     id: 54,
     question: `	54.	Which property is used to make an element transparent in CSS?`,
-    options: ["opacity", "visibility", "filter", "transparent"],
-    answer: 0,
+    options: ["visibility", "filter", "opacity", "transparent"],
+    answer: 2,
   },
   {
     id: 55,
@@ -404,7 +444,7 @@ export const HTML_QUESTIONS = [
     question: `	61.	What is Bootstrap? `,
     options: [
       "A programming language",
-      "A library for CSS and JavaScript",
+      "A framework for CSS and HTML",
       "A database management system",
       "A text editor",
     ],
@@ -412,21 +452,29 @@ export const HTML_QUESTIONS = [
   },
   {
     id: 62,
-    question: `	62.	Which version of Bootstrap is the latest as of September 2021? `,
+    question: `	62.	Which version of Bootstrap is the latest as of January 2023? `,
     options: ["3", "4", "5", "6"],
     answer: 2,
   },
   {
     id: 63,
-    question: `63.	Which of the following is not a component in Bootstrap? `,
-    options: ["Navbar", "Modal", "Carousel", "Table"],
-    answer: 3,
+    question: `63.	What will the code below output \n
+    const x = [1,2,4]
+    const y = [3,5]
+    const result = [x,y]
+    `,
+    options: ["[1,2,4,3,5]", "[y,x]", "[[1,2,4],[3,5]]", "None of the above"],
+    answer: 2,
   },
   {
     id: 64,
-    question: `64.	Which class is used to create a grid system in Bootstrap? `,
-    options: [".grid", ".container", ".row", ".col"],
-    answer: 2,
+    question: `63.	What will the code below output \n
+    const x = [1,2,4]
+    const y = [3,5]
+    const result = [...x,...y]
+    `,
+    options: ["[1,2,4,3,5]", "[y,x]", "[[1,2,4],[3,5]]", "None of the above"],
+    answer: 0,
   },
   {
     id: 65,
@@ -460,14 +508,12 @@ export const HTML_QUESTIONS = [
   },
   {
     id: 70,
-    question: `70.	Which class is used to create a carousel in Bootstrap? `,
-    options: [
-      ".carousel",
-      " .carousel-item ",
-      ".carousel-caption",
-      ".carousel-control",
-    ],
-    answer: 0,
+    question: `70.	What will result in the code below output \n 
+    const obj = {name:'James',age:20}
+    const result = obj['name']
+    `,
+    options: ["name", "James ", "20", "undefined"],
+    answer: 1,
   },
   {
     id: 71,
@@ -639,14 +685,18 @@ export const HTML_QUESTIONS = [
   },
   {
     id: 89,
-    question: `89.	90.	Which class is used to create a scrollspy component in Bootstrap?  `,
-    options: [".scrollspy", ".spy-scroll ", ".spy-target ", ".scrollspy"],
+    question: `89.	What will result in the code below output? \n
+    const result = 2 * '3'
+    `,
+    options: ["23", "6", "5", "undefined"],
     answer: 1,
   },
   {
     id: 90,
-    question: `90.	Which class is used to create a floating action button in Bootstrap?  `,
-    options: [".fab", ".floating-action-button ", ".fab-button ", ".fab-icon"],
-    answer: 1,
+    question: `90.	What will result in the code below output? \n
+    const result = 1 + 2 + '3' + 3
+    `,
+    options: ["9", "1233", "36", "333"],
+    answer: 3,
   },
 ];
